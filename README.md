@@ -1,2 +1,3 @@
 # SCT_ML_2
-K-Means clustering-based customer segmentation project using purchase history
+A simple Streamlit web app for customer segmentation using **K-Means Clustering**.
+
