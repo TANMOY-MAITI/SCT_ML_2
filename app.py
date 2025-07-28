@@ -51,9 +51,13 @@ with right_col:
             ax.set_xlabel("Annual Income (k$)", fontsize=6)
             ax.set_ylabel("Spending Score (1-100)", fontsize=6)
             ax.tick_params(axis='both', labelsize=3)
-            legend = ax.legend(title='Cluster', fontsize=3, title_fontsize=4, loc='upper right', bbox_to_anchor=(1, 1))
+            legend = ax.get_legend()
+            legend.set_title("Cluster")
+            legend.set_title_fontsize(4)
+            for text in legend.get_texts():
+                text.set_fontsize(3)
             for handle in legend.legendHandles:
-                handle.set_sizes([15])
+                handle._sizes = [10]    
 
             plt.tight_layout()
 
