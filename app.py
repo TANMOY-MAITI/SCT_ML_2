@@ -47,10 +47,10 @@ with right_col:
                       s=20,  # smaller points
                       ax=ax)
             # Reduce font sizes
-            ax.set_title("Clusters", fontsize=10)
-            ax.set_xlabel("Annual Income (k$)", fontsize=8)
-            ax.set_ylabel("Spending Score (1-100)", fontsize=8)
-            ax.tick_params(axis='both', labelsize=7)
+            ax.set_title("Clusters", fontsize=6)
+            ax.set_xlabel("Annual Income (k$)", fontsize=6)
+            ax.set_ylabel("Spending Score (1-100)", fontsize=6)
+            ax.tick_params(axis='both', labelsize=3)
 
             plt.tight_layout()
 
