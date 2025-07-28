@@ -18,8 +18,6 @@ with left_col:
         k = left_col.slider("Select number of clusters (K)", 2, 10, 5)
         start = left_col.button("🚀 Start Clustering")
         
-        if start:
-            k = st.slider("🔢 Select number of clusters (K)", 2, 10, 5)
 
 with right_col:
     if uploaded_file:
@@ -33,7 +31,7 @@ with right_col:
         features = ['Age', 'Annual Income (k$)', 'Spending Score (1-100)']
         X = df[features]
 
-        if 'start' in locals() and start:
+        if start:
             model = KMeans(n_clusters=k, random_state=42)
             df['Cluster'] = model.fit_predict(X)
 
