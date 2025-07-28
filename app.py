@@ -56,11 +56,9 @@ with right_col:
             legend.get_title().set_fontsize(4)
             for text in legend.get_texts():
                 text.set_fontsize(3)
-            for handle in legend.legendHandles:
-                handle._sizes = [10]    
+             
 
             plt.tight_layout()
-
             st.pyplot(fig)
 
             st.subheader("📋 Cluster Summary")
