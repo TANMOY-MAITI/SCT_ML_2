@@ -18,6 +18,14 @@ CSV file with the following columns:
 - `Spending Score (1-100)`
 - (Optional) `Gender` (encoded automatically)
 
+## 🛠 Built With
+
+- Python
+- Pandas
+- Matplotlib
+- Seaborn
+- scikit-learn
+
 ## Demo link
 
 https://sctml2-d8fsz92ainrgjytrnmvzch.streamlit.app/
