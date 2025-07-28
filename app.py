@@ -7,7 +7,6 @@ from sklearn.cluster import KMeans
 st.set_page_config(page_title="Mall Customer Clustering", layout="wide")
 st.title("🛍️ Mall Customer Segmentation")
 
-# Column layout: 1/3 (left) and 2/3 (right)
 left_col, right_col = st.columns([1, 2])
 
 with left_col:
@@ -27,15 +26,12 @@ with right_col:
 
         if 'Gender' in df.columns:
             df['Gender'] = df['Gender'].map({'Male': 0, 'Female': 1})
-
         features = ['Age', 'Annual Income (k$)', 'Spending Score (1-100)']
         X = df[features]
 
         if start:
             model = KMeans(n_clusters=k, random_state=42)
-            df['Cluster'] = model.fit_predict(X)
-
-            # Visualize
+            df['Cluster'] = model.fit_predict(X)          
             st.subheader("📊 Cluster Visualization")
             fig, ax = plt.subplots(figsize=(3, 2.5), dpi=100) # smaller figure
             sns.scatterplot(
@@ -46,7 +42,6 @@ with right_col:
                       palette='viridis',
                       s=20,  # smaller points
                       ax=ax)
-            # Reduce font sizes
             ax.set_title("Clusters", fontsize=6)
             ax.set_xlabel("Annual Income (k$)", fontsize=6)
             ax.set_ylabel("Spending Score (1-100)", fontsize=6)
@@ -55,14 +50,9 @@ with right_col:
             legend.set_title("Cluster")
             legend.get_title().set_fontsize(4)
             for text in legend.get_texts():
-                text.set_fontsize(3)
-             
-
+                text.set_fontsize(3)            
             plt.tight_layout()
             st.pyplot(fig)
-
             st.subheader("📋 Cluster Summary")
             st.write(df.groupby('Cluster')[features].mean())
-
-            # Optional: Download CSV
             st.download_button("📥 Download Result", df.to_csv(index=False), file_name="clustered_data.csv", mime="text/csv")
