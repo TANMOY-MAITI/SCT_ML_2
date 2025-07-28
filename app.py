@@ -15,7 +15,8 @@ with left_col:
     uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
 
     if uploaded_file:
-        start = st.button("🚀 Start Clustering")
+        k = left_col.slider("Select number of clusters (K)", 2, 10, 5)
+        start = left_col.button("🚀 Start Clustering")
         
         if start:
             k = st.slider("🔢 Select number of clusters (K)", 2, 10, 5)
