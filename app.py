@@ -38,7 +38,7 @@ with right_col:
 
             # Visualize
             st.subheader("📊 Cluster Visualization")
-            fig, ax = plt.subplots()
+            fig, ax = plt.subplots(figsize=(5, 4))
             sns.scatterplot(data=df, x='Annual Income (k$)', y='Spending Score (1-100)', hue='Cluster', palette='viridis')
             st.pyplot(fig)
 
