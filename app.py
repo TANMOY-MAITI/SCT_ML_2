@@ -37,8 +37,15 @@ with right_col:
 
             # Visualize
             st.subheader("📊 Cluster Visualization")
-            fig, ax = plt.subplots(figsize=(3, 2))
-            sns.scatterplot(data=df, x='Annual Income (k$)', y='Spending Score (1-100)', hue='Cluster', palette='viridis')
+            fig, ax = plt.subplots(figsize=(4, 3))  # smaller figure
+            sns.scatterplot(
+                      data=df,
+                      x='Annual Income (k$)',
+                      y='Spending Score (1-100)',
+                      hue='Cluster',
+                      palette='viridis',
+                      s=30,  # smaller points
+                      ax=ax)
             st.pyplot(fig)
 
             st.subheader("📋 Cluster Summary")
