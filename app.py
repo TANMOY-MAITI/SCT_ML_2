@@ -53,7 +53,7 @@ with right_col:
             ax.tick_params(axis='both', labelsize=3)
             legend = ax.get_legend()
             legend.set_title("Cluster")
-            legend.set_title_fontsize(4)
+            legend.get_title().set_fontsize(4)
             for text in legend.get_texts():
                 text.set_fontsize(3)
             for handle in legend.legendHandles:
